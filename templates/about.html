@@ -1,0 +1,263 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- About Section -->
+<section class="about">
+    <h2>About Us</h2>
+    <p>Hyper Technologies is a leading tech company specializing in AI, web development, and cloud computing.</p>
+</section>
+
+<!-- Mission Section with Animated Text -->
+<section class="mission">
+    <h2>Our Mission</h2>
+    <p class="typing-effect">At <span>Hyper Technologies</span>, our mission is to innovate and deliver top-tier technology solutions that empower businesses and individuals worldwide.</p>
+</section>
+
+<!-- Core Values Section with Icons -->
+<section class="values">
+    <h2>Our Core Values</h2>
+    <ul>
+        <li><i class="fas fa-lightbulb"></i> <strong>Innovation: </strong> We embrace cutting-edge technologies.</li>
+        <li><i class="fas fa-star"></i> <strong>Excellence: </strong> Delivering high-quality solutions is our priority.</li>
+        <li><i class="fas fa-shield-alt"></i> <strong>Integrity: </strong> Transparency and trust in all our dealings.</li>
+        <li><i class="fas fa-user-check"></i> <strong>Customer Focus: </strong> Ensuring client satisfaction at every step.</li>
+    </ul>
+</section>
+
+<!-- Team Section with Animated Cards -->
+<section class="team">
+    <h2>Meet Our Team</h2>
+    <div class="team-members">
+        <div class="member">
+            <img src="{% static 'images/ceo.jpg' %}" alt="CEO">
+            <h3>Eng.Wasswa Douglas</h3>
+            <p>Founder & CEO</p>
+        </div>
+        <div class="member">
+            <img src="{% static 'images/cathy.jpg' %}" alt="CTO">
+            <h3>Naluyange Catherine</h3>
+            <p>Chief Technology Officer</p>
+        </div>
+    </div>
+</section>
+
+<!-- More About CEO Section -->
+<section class="more-about-ceo">
+    <div class="member">
+        <img src="{% static 'images/douglas.jpg' %}" alt="CEO" class="ceo-img">
+        <h3>Eng.Wasswa Douglas</h3>
+        <p>
+            Wasswa Douglas is a highly skilled Computer Engineer, graduating from Busitema University with a deep passion for technology and innovation. With a robust background in IT maintenance, he is adept at ensuring seamless operations of all technical systems. His leadership skills are well-honed, as he has successfully led teams in various tech projects, fostering collaboration and driving efficiency.
+            
+            Douglas excels in app development, specializing in Flutter, which allows him to create highly responsive, cross-platform mobile applications. He has delivered top-notch apps that cater to both iOS and Android platforms, ensuring excellent performance and user experience. His expertise in web development, particularly with Django, empowers him to build dynamic, scalable websites that meet modern standards. From complex backend systems to user-friendly front-end interfaces, he is well-versed in every aspect of web development.
+
+            As a creative professional, he is proficient in graphic design using GIMP, delivering visually appealing designs that enhance user experiences. His keen eye for design ensures that the digital products he creates are not only functional but also aesthetically pleasing and aligned with current design trends.
+
+            Additionally, Wasswa has developed a strong proficiency in video editing using Filmora, allowing him to produce high-quality visual content. His work in video production includes everything from promotional videos to tutorials and product demonstrations, ensuring his audience is always engaged with compelling content. His skills in UI and UX design, using tools like Figma, ensure that his projects offer intuitive, user-friendly interfaces that prioritize the end-user experience.
+
+            Beyond his technical prowess, Wasswa is a visionary leader committed to driving innovation and growth. He has a clear understanding of the ever-changing tech landscape and continuously adapts to new technologies and trends. His diverse skill set, from development to design, positions him as a versatile and forward-thinking CEO. Under his leadership, the company is poised for continued success, guided by a clear vision and a commitment to excellence in every project undertaken.
+
+            With a passion for mentorship, Wasswa is also dedicated to helping the next generation of engineers and developers reach their full potential. His enthusiasm for knowledge sharing and personal growth is evident in his involvement in various tech communities and educational initiatives.
+        </p>
+    </div>
+</section>
+
+<!-- Achievements with Animated Numbers -->
+<section class="achievements">
+    <h2>Our Achievements</h2>
+    <div class="stats">
+        <div class="stat">
+            <h3 class="count" data-target="10">0</h3>
+            <p>Projects Completed</p>
+        </div>
+        <div class="stat">
+            <h3 class="count" data-target="20">0</h3>
+            <p>Clients Worldwide</p>
+        </div>
+        <div class="stat">
+            <h3 class="count" data-target="10">0</h3>
+            <p>Awards Won</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Call to Action -->
+<section class="contact-cta">
+    <h2>Work With Us</h2>
+    <p>Want to collaborate with Hyper Technologies? <a href="{% url 'contact' %}">Get in touch</a> today!</p>
+</section>
+
+<!-- CSS for Animations -->
+<style>
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: bold;
+}
+
+section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+/* Slide-Up Animation */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typing effect for mission text */
+.typing-effect {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #333;
+    animation: typing 4s steps(40) 1s 1 normal both, blinkCaret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinkCaret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Hover animation for team images */
+.ceo-img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ceo-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+
+/* Animated numbers for stats */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.stat h3 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #333;
+    animation: countUp 2s forwards;
+}
+
+.stat p {
+    font-size: 1.1em;
+    color: #777;
+}
+
+@keyframes countUp {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Button hover animation (updated) */
+a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+a:hover {
+    color: #007bff;
+    transform: scale(1.05);
+}
+
+/* Glow effect on text hover */
+h3:hover {
+    color: #007bff;
+    text-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+    .team-members {
+        display: block;
+    }
+    .stats {
+        flex-direction: column;
+    }
+}
+</style>
+
+<!-- JS for Counting Stats -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const counters = document.querySelectorAll('.count');
+    counters.forEach(counter => {
+        let target = parseInt(counter.getAttribute('data-target'));
+        let count = 0;
+        let speed = 500;
+
+        function updateCount() {
+            const increment = target / speed;
+            count += increment;
+            if (count >= target) {
+                counter.textContent = target + '+';
+            } else {
+                counter.textContent = Math.round(count) + '+';
+                requestAnimationFrame(updateCount);
+            }
+        }
+
+        updateCount();
+    });
+});
+</script>
+
+{% endblock %}

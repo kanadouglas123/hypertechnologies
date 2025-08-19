@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section with Animated Background -->
+<section class="hero">
+    <div class="hero-content">
+        <h2>Innovate and be serviced with <span>Hyper Technologies</span></h2>
+        <p>Leading the way in computer services, new technology, and software development.</p>
+        <a href="{% url 'services' %}" class="btn">Explore Services</a>
+    </div>
+</section>
+
+<!-- Animated Moving Images Section -->
+<section class="moving-images">
+    <h2>Our Expertise</h2>
+    <div class="image-slider">
+          <img src="{% static 'images/app.png' %}" alt="Web Development">
+        <img src="{% static 'images/web.jpeg' %}" alt="AI Solutions">
+         <img src="{% static 'images/it.jpeg' %}" alt="Web Development">
+         <img src="{% static 'images/tec.jpeg' %}" alt="Web Development">
+        <img src="{% static 'images/vidoe.jpeg' %}" alt="Cloud Computing">
+        <img src="{% static 'images/tec2.jpeg' %}" alt="Web Development">
+      
+        <img src="{% static 'images/grapic.jpeg' %}" alt="graphic Design">
+        <img src="{% static 'images/tec1.jpeg' %}" alt="Web Development">
+
+         <img src="{% static 'images/app.png' %}" alt="Web Development">
+        <img src="{% static 'images/web.jpeg' %}" alt="AI Solutions">
+         <img src="{% static 'images/it.jpeg' %}" alt="Web Development">
+        <img src="{% static 'images/vidoe.jpeg' %}" alt="Cloud Computing">
+        <img src="{% static 'images/app.png' %}" alt="Web Development">
+        <img src="{% static 'images/graphic.jpeg' %}" alt="App Development">
+    </div>
+</section>
+
+<!-- Testimonials Section with Smooth Fade-in Effect -->
+<section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+        <p>"HyperTech transformed our business with cutting-edge AI solutions!"</p>
+        <h4>Bole Abel</h4>
+    </div>
+    <div class="testimonial">
+        <p>"Their team built an amazing web platform for us. Highly recommended!"</p>
+        <h4>- Kizza Marvin -Headteacher Seeta college</h4>
+    </div>
+</section>
+
+<!-- Call to Action with Animated Button -->
+<section class="cta">
+    <h2>Start Your Tech Journey With Us</h2>
+    <p>Let's innovate together and build the future of technology.</p>
+    <h3><h2>Case Studies</h2>
+Delivering Future IT Solutions Today
+Find out how businesses are succeeding with our IT services. As the leading full-service IT company in Uganda, <br>we leverage on our expertise, latest technologies and innovations to constantly drive growth to our clients.<br> Take a look at some sample case studies and client success stories from our recent works.</h3><br>
+    <a href="{% url 'contact' %}" class="btn animated-btn">Get in Touch</a>
+</section>
+
+<!-- Contact Section -->
+<section class="contact">
+    <h2>Contact Us</h2>
+    <p>Have a question or need a tech solution? Reach out to us today!</p>
+
+    <div class="contact-details">
+        <div class="contact-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>123 Lugazi kinyoro road, Lugazi Town</p>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-phone-alt"></i>
+            <p>+256 746937568</p>
+        </div>
+        <div class="contact-info">
+            <i class="fas fa-envelope"></i>
+            <p>info@hypertech.com</p>
+        </div>
+    </div>
+
+    <h3>Send Us a Message</h3>
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</section>
+
+{% endblock %}

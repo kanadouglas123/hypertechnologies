@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="blog">
+    <h2>Latest Blog Posts</h2>
+    <p>Stay updated with the latest trends in AI, web development, and cloud computing.</p>
+
+    <div class="blog-container">
+        {% for blog in blogs %}
+        <div class="blog-card">
+            <img src="{{ images.image.url }}" alt="{{ blog.title }}">
+            <h3><a href="{% url 'blog_detail' blog.id %}">{{ blog.title }}</a></h3>
+            <p>{{ blog.summary }}</p>
+            <small>By {{ blog.author }} | {{ blog.published_date|date:"F d, Y" }}</small>
+        </div>
+        {% empty %}
+        <p>No blog posts available at the moment. Check back later!</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+
+
+

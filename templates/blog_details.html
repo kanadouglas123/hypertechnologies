@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="blog-detail">
+    <h2>{{ blog.title }}</h2>
+    <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+    <p class="post-meta">Published on {{ blog.published_date|date:"F d, Y" }} by {{ blog.author }}</p>
+    <p>{{ blog.content }}</p>
+
+    <!-- Back to Blog List Button -->
+    <a href="{% url 'blog_detail' %}"  class="btn back-btn">🔙 Back to Blogs</a>
+</section>
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% if messages %}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <div class="messages">
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Innovate and be serviced with <span>Hyper Technologies</span></h2>
+        <p>Leading the way in computer services, new technology, and software development.</p>
+        <a href="{% url 'services' %}" class="btn">Explore Services</a>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="contact-container">
+        <h2>Get In Touch With Us</h2>
+        <p>Have a question or need a tech solution? Contact us today!</p>
+
+        <div class="contact-content">
+            <!-- Left Side - Contact Info -->
+            <div class="contact-info">
+                <div class="info-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Our Location</h3>
+                    <p>HyperTech Office, Kampala, Uganda</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Phone</h3>
+                    <p>+256 746937568</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>info@hypertech.com</p>
+                    <p>sales@hypertechnologies.com</p>
+                </div>
+                <div class="info-box">
+                    <i class="fas fa-clock"></i>
+                    <h3>Working Hours</h3>
+                    <p>Monday - Saturday<br>09:00 AM - 06:00 PM</p>
+                </div>
+            </div>
+
+            <!-- Right Side - Contact Form -->
+            <div class="contact-form">
+    <h2>Send Us a Message</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="first_name">First Name *</label>
+            <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile No *</label>
+            <input type="text" name="mobile" id="mobile" placeholder="Mobile Number" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" name="email" id="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea name="message" id="message" placeholder="Your Message" rows="4" required></textarea>
+        </div>
+
+        <!-- reCAPTCHA -->
+        <div class="form-group captcha">
+            <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+        </div>
+
+        <button type="submit" class="btn submit-btn">
+            Submit <i class="fas fa-paper-plane"></i>
+        </button>
+    </form>
+</div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

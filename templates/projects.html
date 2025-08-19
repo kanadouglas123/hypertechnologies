@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="projects">
+    <h2>Our Projects</h2>
+    <h3><p>
+    We have worked on various innovative projects, including AI-powered applications, enterprise software, and scalable cloud solutions.  
+    Our team has developed cutting-edge solutions in fields such as machine learning, mobile applications, and web development.  
+    We specialize in creating intelligent systems that automate processes, enhance efficiency, and drive digital transformation.  
+    Some of our key projects include AI-based disease detection for agriculture, smart financial tools, and cybersecurity applications.  
+    We focus on user-friendly designs, ensuring that our software solutions are both functional and accessible.  
+    By leveraging cloud technologies, we create scalable and secure platforms tailored to business needs.  
+    Our mobile applications are designed for seamless user experiences, integrating modern UI/UX principles.  
+    We also work on big data solutions, helping businesses analyze and utilize vast amounts of information effectively.  
+    From innovative startup tools to large-scale enterprise systems, our work continues to push technological boundaries.  
+    At Hyper Technologies, we are committed to innovation, delivering high-quality, impactful solutions that shape the future.  
+</p></h3>
+
+<!-- AgroEye application -->
+   {% for project in projects %}
+    <div class="project-container">
+        <div class="project">
+            <img src="{{ project.image.url }}" alt="{{ project.name }}" style="width: 150px; height: auto;">
+<h3>{{ project.name }}</h3>
+<p>{{ project.description }}</p>
+
+
+            <h4>Key Features:</h4>
+            <ul>
+                {% for feature in project.features.all %}
+                <li>📌 <strong>{{ feature.title }}:</strong> {{ feature.description }}</li>
+                {% endfor %}
+            </ul>
+
+            <h4>Sample user interface of the system:</h4>
+            <div class="image-gallery">
+                {% for image in project.sample_images.all %}
+                <img src="{{ image.image.url }}" alt="{{ project.name }}">
+                {% endfor %}
+            </div>
+
+            <h4>How to Use {{ project.name }}:</h4>
+            <div class="video-container">
+                {% if project.video %}
+                <video controls>
+                    <source src="{{ project.video.url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                {% endif %}
+            </div>
+
+            {% if project.apk_url %}
+            <a href="{{ project.apk_url.url }}" class="btn download-btn">📥 Download APK</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+ 
+</section>
+{% endblock %}
